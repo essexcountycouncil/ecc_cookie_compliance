@@ -31,7 +31,7 @@ function ecc_cookie_compliance_preprocess_field(&$variables) {
 function ecc_cookie_compliance_page_attachments(&$variables) {
   $variables['#attached']['library'][] = 'ecc_cookie_compliance/live_handler';
   $host = \Drupal::request()->getSchemeAndHttpHost();
-  $request = \Drupal::request()->headers->get('referer');
+  $request = \Drupal::request()->headers->get('referer') ?? '';
   $prev_destination = str_replace($host, "", $request);
   $variables['#attached']['drupalSettings']['path']['prevDestination'] = $prev_destination;
 }
