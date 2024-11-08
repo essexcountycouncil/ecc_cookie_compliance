@@ -112,4 +112,6 @@ function _cookies_video_preprocess_field_item_link(&$item) {
   $item["content"]["#attributes"]["title"] = $title;
   $item["content"]["#attributes"]["target"] = "_blank";
   $item["content"]["#value"] = $title;
+  $item["content"]["#prefix"] = "<div class='cookies-message'><h3>Video Unavailable</h3><p>It looks like you have declined cookies, which means we are unable to show you this video. Cookies help us provide a better experience by remembering your preferences and enabling video playback.</p><p>If you would like to watch the video, <a href='/cookies'>please consider accepting cookies</a>. Or, view the video directly on Youtube:</p>";
+  $item["content"]["#suffix"] = "</div>";
 }
