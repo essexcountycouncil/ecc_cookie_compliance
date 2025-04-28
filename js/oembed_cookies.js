@@ -13,11 +13,10 @@
           .push(arguments)
       };
 
-      var postPreferencesSaveHandler = function (response) {
+      const postPreferencesSaveHandler = function (response) {
         location.reload();
       };
       Drupal.eu_cookie_compliance('postPreferencesSave', postPreferencesSaveHandler);
-
 
       if (Drupal.eu_cookie_compliance.getCookieStatus() === 'granted' && $.inArray("marketing_cookies", Drupal.eu_cookie_compliance.getAcceptedCategories()) !== -1) {
         $.each(settings.ecc_cookie_oembed, function(key, val) {
