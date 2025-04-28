@@ -102,14 +102,22 @@ function _cookies_video_preprocess_field_item_oembed(&$item) {
 
 function _cookies_video_preprocess_field_item_link(&$item) {
   // Move src to href.
-  $src = $item["content"]["#attributes"]["data-src"];
-  $title = $item["content"]["#attributes"]["title"];
-  $item["content"]["#attributes"] = [];
-
-  $item["content"]["#type"] = "html_tag";
-  $item["content"]["#tag"] = "a";
-  $item["content"]["#attributes"]["href"] = $src;
-  $item["content"]["#attributes"]["title"] = $title;
-  $item["content"]["#attributes"]["target"] = "_blank";
-  $item["content"]["#value"] = $title;
+  $src = $item['content']['#attributes']['data-src'];
+  $title = $item['content']['#attributes']['title'];
+  $item['content']['#attributes'] = [];
+  $item['content']['#type'] = 'container';
+  $item['content']['#attributes']['class'] = ['cookies-message'];
+  $item['content']['message'] = [
+    '#markup' => t("<h3>Video Unavailable</h3><p>It looks like you have declined cookies, which means we are unable to show you this video. Cookies help us provide a better experience by remembering your preferences and enabling video playback.</p><p>If you would like to watch the video, <a href='/cookies'>please consider accepting cookies</a>. Or, view the video directly on Youtube:</p>"),
+  ];
+  $item['content']['link'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'a',
+    '#attributes' => [
+      'href' => $src,
+      'title' => $title,
+      'target' => '_blank',
+    ],
+    '#value' => $title,
+  ];
 }

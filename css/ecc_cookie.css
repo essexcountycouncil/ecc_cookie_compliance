@@ -66,3 +66,18 @@
 .user-logged-in .sliding-popup-top {
   position: static;
 }
+
+.cookies-message {
+  display: block;
+  height: 100%;
+  text-align: center;
+  padding: 2em;
+  border-radius: 0.5em;
+  background-color: #333;
+  color: #fff;
+}
+
+.cookies-message a,
+.cookies-message h3 {
+  color: #fff;
+}
