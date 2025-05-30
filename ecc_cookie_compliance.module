@@ -108,7 +108,7 @@ function _cookies_video_preprocess_field_item_link(&$item) {
   $item['content']['#type'] = 'container';
   $item['content']['#attributes']['class'] = ['cookies-message'];
   $item['content']['message'] = [
-    '#markup' => t("<h3>Video Unavailable</h3><p>It looks like you’ve declined cookies, which means we can’t show you this video. Cookies help us provide a better experience by remembering your preferences and enabling video playback.</p><p>If you’d like to watch the video, please consider accepting cookies. You can <a href='/cookies'>update your cookie preferences</a> here."),
+    '#markup' => t("<h3>Video Unavailable</h3><p>It looks like you’ve declined cookies, which means we can’t show you this video. Cookies help us provide a better experience by remembering your preferences and enabling video playback.</p><p>If you’d like to watch the video, please consider accepting cookies. You can <a href='/cookies'>update your cookie preferences</a> here. </p><p>Thank you for understanding!</p>"),
   ];
   $item['content']['link'] = [
     '#type' => 'html_tag',
