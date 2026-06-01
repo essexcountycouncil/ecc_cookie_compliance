@@ -5,9 +5,7 @@ oembed_cookies:
   dependencies:
     - core/jquery
 live_handler:
-  version: VERSION
-  js:
-    js/live_handler.js: {}
+  version: 1.0
   css:
     component:
       css/ecc_cookie.css: {}
