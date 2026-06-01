@@ -1,15 +1,5 @@
 <?php
 
-
-/**
- * Implements hook_google_tag_snippets_alter().
- */
-function ecc_cookie_compliance_google_tag_snippets_alter(array &$snippets) {
-    // Only add the script snippet if cookie compliance has been agreed.
-    $snippets['script'] = 'window.gtm = function(){ ' . $snippets['script'] . '}; if (document.cookie.includes(\'analytics_cookies\')){ window.gtm(); }';
-    $snippets['noscript'] = '';
-}
-
 /**
  * Based on the implementation at https://git.drupalcode.org/project/cookies/-/blob/2.x/modules/cookies_video/cookies_video.module
  *
